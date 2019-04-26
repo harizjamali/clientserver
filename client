@@ -1,0 +1,21 @@
+import java.io.*;
+import java.net.*;
+	
+	public class client
+	{
+     public static void main ( String [] args ) throws IOException
+	 {
+	  Socket s = new Socket ("192.168.65.128" , 30000);
+	  
+	  PrintWriter wr = new PrintWriter (s.getOutputStream());
+	  wr.println(" Assalamualaikum ");
+	  wr.flush();
+	  InputStreamReader ic = new InputStreamReader (s.getInputStream ());
+	  BufferedReader br = new BufferedReader (ic);
+	  String reader = br.readLine();
+		  
+	  System.out.println(reader);
+		  
+		  
+	 }
+	}
